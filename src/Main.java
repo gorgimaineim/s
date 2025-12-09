@@ -1,8 +1,52 @@
+import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        String string = "book";
+        String string1 = "";
+
+        for (int i = 0; i < string.length(); i++){
+
+            string1 = string.charAt(i) + string1;
+        }
+        System.out.println(string1);
+
+        int[] arr = new int[4];
+        arr[0] = 66;
+        arr[1] = 79;
+        arr[2] = 79;
+        arr[3] = 75;
+        System.out.println(amocana1(arr));
     }
+
+    public static String amocana1(int[] number){
+        String ret = "";
+        for (int i = 0; i < number.length; i++) {
+            ret += (char)number[i];
+
+        }
+        return ret;
+    }
+
+    public static String codedWriting(String str){
+        String result = "";
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')){
+                if((c >= 'X' && c <= 'Z') || c >= 'x'){ c -= 23;}
+                else c+=3;
+            }
+            result += c;
+
+        }
+        return result;
+
+
+    }
+
 }
 
 
