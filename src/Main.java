@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+        System.out.println(reverseCapitals1("aSdaySADCzx"));
         String string = "book";
         String string1 = "";
 
@@ -30,6 +30,47 @@ public class Main {
         }
         return ret;
     }
+
+    public static String longestPrefix(String str1, String str2){
+        String prefix= " ";
+        int x = 0;
+        int min = Math.min(str1.length(),str2.length());
+        while(x<min){
+            if(str1.charAt(x)==str2.charAt(x)){
+                prefix += str1.charAt(x);
+            }else break; x++;
+        }return str1.substring(0,x);
+    }
+
+    public static String reverseCapitals(String str){
+        int dif = 'a' - 'A';
+        String result = "";
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if(c>'A' && c<'Z'){
+                result +=(char)(c+dif);
+            }else if (c>+'a' && c<='z'){
+                result += (char)(c-dif);
+            }else{result+=c;}
+        }return result;
+    }
+
+    public static String reverseCapitals1(String str){
+        int dif = 'a' - 'A';
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if(c>'A' && c<'Z'){
+                result.append((char)(c+dif));
+            }else if (c>+'a' && c<='z'){
+                result.append((char)(c-dif));
+            }else{result.append(c);}
+        }return result.toString();
+    }
+
+
+
+
 
     public static String codedWriting(String str){
         String result = "";
